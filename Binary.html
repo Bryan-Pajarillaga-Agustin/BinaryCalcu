@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="calcu">
+            <br>
+            <h1 id="Title">Binary Calculator</h1>
+            <br><br><br>
+            <input type="number" inputmode="numeric" placeholder="Binary Number..." id="input1" class="input">
+            <div class="div-operation">
+                <input type="text" maxlength="1" placeholder="+,-,*,/" class="input" id="operation">
+                <button class="opt" onclick="operations(0)">+</button>
+                <button class="opt" onclick="operations(1)">-</button>
+                <button class="opt" onclick="operations(2)">x</button>
+                <button class="opt" onclick="operations(3)">/</button>
+            </div>
+            <input type="number" placeholder="Binary Number..." id="input2" class="input">
+            <br><br><br>
+            <h1 id="Result"> Result </h1>
+            <button type="submit" onclick="Cal()" id="convert">Convert</button>
+            
+        </div>
+    </div>
+    <script src="binary.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+}
+.calcu{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 440px;
+    height: 440px;
+    padding: 30px;
+    background: linear-gradient(45deg, #32e29cd7, #1eaae7d7);
+    margin-top: 50px;
+    border-radius: 30px;
+    box-shadow: 10px 17px 15px #5c645dc3;
+    position: relative;
+}
+#Title{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+.input{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    
+    width: 440px;
+    background: transparent;
+    text-align: center;
+}
+.input:focus{
+    border-bottom: 2px solid black;
+}
+#operation{
+    border-bottom: 0px solid black;
+    position: relative;
+    right: 0px;
+    width: 20px;
+}
+.down{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 140px;
+    font-weight: 900;
+    text-align: center;
+}
+#Result{
+    background-color: #beb7aed5;
+    border: 5px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+#convert{
+    width: 500px;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: 0px;
+    cursor: pointer;
+    background-color: #0e88edd9;
+    color: #07f3ffb4;
+    transition: all .3s;
+}
+#convert:hover{
+    opacity: .7;
+}
+#convert:active{
+    opacity: .9;
+}
+
+.input::-webkit-inner-spin-button,.input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+.div-operation{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.div-operation .opt{
+    display: none;
+    width: 30px;
+    height:30px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-family: sans-serif;
+}
+.div-operation:hover .opt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
