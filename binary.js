@@ -89,7 +89,7 @@ function Cal(){
         break;
         case "x": result = Firstresult * Secondresult
         break;
-        case "/": result = Firstresult / Secondresult
+        case "/": result = Math.floor(Firstresult / Secondresult)
         break;
     }
 
