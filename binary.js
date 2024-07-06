@@ -89,7 +89,8 @@ function Cal(){
         break;
         case "x": result = Firstresult * Secondresult
         break;
-        case "/": result = Firstresult / Secondresult
+        case "/": result = Math.floor(Firstresult / Secondresult)
+        console.log(result)
         break;
     }
 
@@ -101,52 +102,57 @@ function Cal(){
         resultConvert = result
     }
     
-    document.getElementById("Result").textContent = ""
-    let divideByTwo = Math.floor(resultConvert / baseNum.binary)
-    let multiplyByTwo = divideByTwo * baseNum.binary
-    let r = resultConvert - multiplyByTwo
-    BinaryList = []
+    if(result != 0){
+        document.getElementById("Result").textContent = ""
+        let divideByTwo = Math.floor(resultConvert / baseNum.binary)
+        let multiplyByTwo = divideByTwo * baseNum.binary
+        let r = resultConvert - multiplyByTwo
+        BinaryList = []
 
-    resultConvert = divideByTwo
-    BinaryList.unshift(r.toString())
-    if(!resultConvert == 0){
-        while(resultConvert != 0){
-            resultConvert = divideByTwo
-            divideByTwo = Math.floor(divideByTwo / baseNum.binary)
-            multiplyByTwo = divideByTwo * baseNum.binary
-            r = resultConvert - multiplyByTwo
-            divideByTwo = divideByTwo
-            BinaryList.unshift(r.toString())
-            console.log(BinaryList)
-            if(divideByTwo == 0){
-                if(result > 0 && result != -1){
-                    for(let i = 0; i < BinaryList.length; i++){
-                        document.getElementById("Result").textContent += BinaryList[i].toString()
-                        console.log("error")  
-                    }
-                } else if(result < 0){
-                    BinaryList.unshift("-")
-                    for(let i = 0; i < BinaryList.length; i++){
-                        document.getElementById("Result").textContent += BinaryList[i].toString()  
-                        console.log("error2")
-                    }
-                } break;
+        resultConvert = divideByTwo
+        BinaryList.unshift(r.toString())
+        if(!resultConvert == 0){
+            while(resultConvert != 0){
+                resultConvert = divideByTwo
+                divideByTwo = Math.floor(divideByTwo / baseNum.binary)
+                multiplyByTwo = divideByTwo * baseNum.binary
+                r = resultConvert - multiplyByTwo
+                divideByTwo = divideByTwo
+                BinaryList.unshift(r.toString())
+                console.log(BinaryList)
+                if(divideByTwo == 0){
+                    if(result > 0 && result != -1){
+                        for(let i = 0; i < BinaryList.length; i++){
+                            document.getElementById("Result").textContent += BinaryList[i].toString()
+                            console.log("error")  
+                        }
+                    } else if(result < 0){
+                        BinaryList.unshift("-")
+                        for(let i = 0; i < BinaryList.length; i++){
+                            document.getElementById("Result").textContent += BinaryList[i].toString()  
+                            console.log("error2")
+                        }
+                    } break;
+                }
+            }
+        } else if(resultConvert <= 0){
+            if(result > 0 && result != -1){
+                for(let i = 0; i < BinaryList.length; i++){
+                    document.getElementById("Result").textContent += BinaryList[i].toString()
+                }
+            } else if(result < 0){
+                BinaryList.unshift("-")
+                for(let i = 0; i < BinaryList.length; i++){
+                    document.getElementById("Result").textContent += BinaryList[i].toString() 
+                }
             }
         }
-    } else if(resultConvert <= 0){
-        if(result > 0 && result != -1){
-            for(let i = 0; i < BinaryList.length; i++){
-                document.getElementById("Result").textContent += BinaryList[i].toString()
-            }
-        } else if(result < 0){
-            BinaryList.unshift("-")
-            for(let i = 0; i < BinaryList.length; i++){
-                document.getElementById("Result").textContent += BinaryList[i].toString() 
-            }
-        }
-    }
 
-    if(input1.value == "" || input2.value == ""){
-        document.getElementById("Result").textContent = "Result"
+        if(input1.value == "" || input2.value == ""){
+            document.getElementById("Result").textContent = "Result"
+        } 
+    } else if(result == 0){
+        document.getElementById("Result").textContent = "0"
     }
+    
 }
