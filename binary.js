@@ -158,4 +158,4 @@ function Cal(){
 }
 
 const screenWidth = window.innerWidth
-console.log(screenWidth)
+alert(screenWidth)
